@@ -1,18 +1,32 @@
-
-class Flower{
-  void colour(){System.out.println("colourfull");}
-  
-}
-class rose extends Flower{
-  void red(){System.out.println("red");}
-} 
-class sunflower extends rose{
-  void yellow(){System.out.println("yellow");}
-}
-public class Main{
-public static void main(String args[]){
-    sunflower d=new sunflower();
-   d.yellow();
-   d.red();
-   d.colour();
-}}
+interface Account {    
+    void credit();    
+}    
+interface Ifccode {    
+    void debit();    
+}    
+class Name implements Account,Ifccode {    
+    public void credit() {    
+        System.out.println("nameattack.");    
+    }    
+    public void debit() {    
+        System.out.println("nameuse.");    
+    }    
+}    
+class Type implements Account,Ifccode {    
+    public void credit() {    
+        System.out.println("typeattack.");    
+    }    
+    public void debit() {    
+        System.out.println("typeuse.");    
+    }    
+}    
+public class Main {    
+    public static void main(String[] args) {    
+        Name n= new Name();    
+         Type t= new Type();    
+        n.credit(); // Output: Warrior attacks with a sword.    
+        n.debit(); // Output: Warrior uses a sword.    
+        t.credit(); // Output: Mage attacks with a wand.    
+        t.debit(); // Output: Mage uses a wand.    
+    }    
+}    
